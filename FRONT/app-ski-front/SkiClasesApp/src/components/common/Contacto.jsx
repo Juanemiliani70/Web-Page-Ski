@@ -17,7 +17,7 @@ const Contacto = () => {
         "9VHDCkX0e3iwNer7O"  // ← Tu Public Key
       )
       .then(
-        () => {
+        () => { 
           alert("¡Mensaje enviado con éxito!");
           form.current.reset();
         },
@@ -43,6 +43,7 @@ const Contacto = () => {
         textAlign: "center",
       }}
     >
+    
       <Container style={{ maxWidth: "700px" }}>
         <h2 style={{ marginBottom: "2rem", fontWeight: "bold", color: "#fff" }}>
           Contacto
