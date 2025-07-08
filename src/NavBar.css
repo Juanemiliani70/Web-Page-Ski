@@ -1,0 +1,95 @@
+/* Ocultar hamburguesa y menú expandido en desktop */
+@media (min-width: 769px) {
+    .hamburguesa {
+      display: none !important;
+    }
+    .menu-expandido {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      padding: 0.5rem 4rem;
+      display: flex !important;
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+      z-index: 9998;
+      box-shadow: none;
+    }
+  
+    .separador {
+      display: none;
+    }
+  
+    /* Ocultar Contacto dentro del menú en desktop */
+    .contacto-mobile {
+      display: none;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .botones-desktop {
+      display: none !important;
+    }
+  
+    .hamburguesa {
+      display: block !important;
+    }
+  
+    .menu-expandido {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      padding: 0.5rem 1.2rem;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      z-index: 9998;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+  
+    .separador {
+      width: 100%;
+      height: 1px;
+      background-color: #ccc;
+      margin-bottom: 0.6rem;
+    }
+  
+    .contacto-mobile {
+      display: block;
+    }
+  }
+  
+  /* Estilos comunes de links */
+  .link-menu {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .link-menu:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botón menú desktop sin hover oscuro */
+  .btn-menu-desktop:hover {
+    background: none !important;
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  
+  .link-mobile-contacto {
+    display: none;
+  }
+  
+  @media (max-width: 767px) {
+    .link-mobile-contacto {
+      display: block;
+    }
+  }
+  

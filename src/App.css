@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+  .botones-desktop {
+    display: none !important;
+  }
+  .hamburguesa {
+    display: block !important;
+  }
+  .menu-expandido {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburguesa {
+    display: none !important;
+  }
+  .menu-expandido {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+  }
+}
