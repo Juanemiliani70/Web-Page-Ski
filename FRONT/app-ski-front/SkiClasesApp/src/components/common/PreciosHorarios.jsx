@@ -3,30 +3,50 @@ import { Container } from "react-bootstrap";
 
 const PreciosHorarios = () => {
   return (
-   
     <section
-      id="precios-horarios"
+      id="precios"
       style={{
-        padding: "120px 20px 60px",
-        backgroundColor: "#000", 
-        color: "#ddd", // texto gris claro
+        padding: "80px 20px 40px", // Reducido para subir el contenido
+        backgroundColor: "#000",
+        color: "#000",
         minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "start", // Alineado arriba en lugar de center
       }}
     >
       <Container style={{ maxWidth: "900px" }}>
-        <h2 className="text-center mb-5" style={{ fontWeight: "bold", color: "#ddd" }}>
-          Precios & Horarios
+        <h2
+          className="text-center"
+          style={{
+            fontWeight: "bold",
+            color: "#fff",
+            marginBottom: "2rem",
+          }}
+        >
+          Precios
         </h2>
+
+        <h4
+          className="text-center mb-4"
+          style={{ fontWeight: "bold", color: "#fff" }}
+        >
+          Horarios
+        </h4>
+
+        <p
+          className="text-center mb-5"
+          style={{ fontSize: "1.1rem", color: "#fff" }}
+        >
+          Horario flexible de 10 a 15:30 hs
+        </p>
 
         <div className="table-responsive">
           <table
             className="table table-bordered text-center shadow rounded"
-            style={{ backgroundColor: "#1e1e1e", color: "#ddd" }}
+            style={{ backgroundColor: "#fff", color: "#000" }}
           >
-            <thead className="table-dark" style={{ backgroundColor: "#333" }}>
+            <thead className="table-dark" style={{ backgroundColor: "#ddd", color: "#000" }}>
               <tr>
                 <th>Modalidad</th>
                 <th>1 a 3 días</th>
@@ -50,34 +70,8 @@ const PreciosHorarios = () => {
             </tbody>
           </table>
         </div>
-
-        <div style={{ marginTop: "40px" }}>
-          <h4 className="mb-3" style={{ fontWeight: "bold", color: "#ddd" }}>
-            Horarios
-          </h4>
-          <ul
-            style={{
-              listStyle: "none",
-              paddingLeft: 0,
-              fontSize: "1.1rem",
-              lineHeight: "2rem",
-              color: "#ccc",
-            }}
-          >
-            <li>
-              🕙 <strong>Horario flexible:</strong> entre las 10:00 y 15:30 hs
-            </li>
-            <li>
-              ⏱️ <strong>Half Day:</strong> 3 horas de clase
-            </li>
-            <li>
-              ⏱️ <strong>Full Day:</strong> 6 horas de clase
-            </li>
-          </ul>
-        </div>
       </Container>
     </section>
-    
   );
 };
 

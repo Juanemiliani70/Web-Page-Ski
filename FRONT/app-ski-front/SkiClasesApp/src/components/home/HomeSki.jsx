@@ -5,6 +5,7 @@ import SobreNosotros from "../common/SobreNosotros";
 import NivelesAlumnos from "../common/NivelesAlumnos";
 import CentrosDeSki from "../common/CentrosDeSki"; 
 import PreciosHorarios from "../common/PreciosHorarios";
+import QueOfrecemos from "../common/QueOfrecemos";
 
 
 
@@ -21,6 +22,10 @@ const HomeSki = () => {
 
       <section id="centros-de-ski">
         <CentrosDeSki />
+      </section>
+
+      <section id="que-ofrecemos">
+        <QueOfrecemos />
       </section>
 
       <section id="precios">

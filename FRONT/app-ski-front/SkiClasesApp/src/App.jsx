@@ -9,12 +9,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Contacto from "./components/common/Contacto";
 import ScrollToTop from "./components/layout/ScrollToTop";
 
+
 function App() {
   return (
     <Router>
        <ScrollToTop />
       <NavBar />
-      <main style={{ marginTop: "56px" }}> {/* Deja espacio al Navbar fijo */}
+      <main style={{ marginTop: "52px" }}> {/* Deja espacio al Navbar fijo */}
         <Routes>
           <Route path="/" element={<HomeSki />} />
           <Route path="/contacto" element={<Contacto />} /> 

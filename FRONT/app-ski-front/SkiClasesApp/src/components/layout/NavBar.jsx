@@ -1,221 +1,181 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "../../NavBar.css";
 
 const NavBar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [menuAbierto, setMenuAbierto] = useState(false);
-  const location = useLocation();        // ✅ Para saber en qué ruta estás
-  const navigate = useNavigate();        // ✅ Para volver atrás
 
-  const mostrarBotonVolver = location.pathname === "/contacto";  // ✅ Mostrar solo en /contacto
+  const esContacto = location.pathname === "/contacto";
 
-  const linkColor = "#555";
-  const linkHoverOpacity = 0.7;
+  const volver = () => navigate("/");
 
-  const baseLinkStyle = {
-    color: linkColor,
-    fontWeight: "600",
-    cursor: "pointer",
-    textDecoration: "none",
-    transition: "opacity 0.3s ease",
+  const handleScrollToInicio = () => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        const elem = document.getElementById("inicio");
+        if (elem) elem.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const elem = document.getElementById("inicio");
+      if (elem) elem.scrollIntoView({ behavior: "smooth" });
+    }
+    setMenuAbierto(false);
   };
 
-  const menuItems = [
-    { href: "#sobre-nosotros", label: "Sobre Nosotros" },
-    { href: "#centros-de-ski", label: "Centros de Ski" },
-    { href: "#precios", label: "Precios y Horarios" },
-    { href: "#niveles", label: "Niveles" },
-  ];
-
-  const handleClickLink = () => setMenuAbierto(false);
-
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: "#fff",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-        zIndex: 9999,
-        padding: "0.5rem 1rem",
-      }}
-    >
-      <div
+    <>
+      <nav
         style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
+          backgroundColor: "#fff",
+          color: "#000",
+          padding: "0.8rem 1.2rem",
           display: "flex",
-          alignItems: "center",
           justifyContent: "space-between",
-          flexWrap: "nowrap",
+          alignItems: "center",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "56px",
+          zIndex: 9999,
         }}
       >
-        {/* Logo */}
         <a
-          href="#inicio"
-          style={{
-            ...baseLinkStyle,
-            fontSize: "1.5rem",
-            marginLeft: "-10px",
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            handleScrollToInicio();
           }}
-          onClick={handleClickLink}
+          style={{
+            margin: 0,
+            fontWeight: "bold",
+            color: "#000",
+            textDecoration: "none",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+          }}
         >
+
+          
+
           S.S
+
         </a>
 
-        {/* Botones derecha */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "1rem",
-            paddingRight: "10px",
-          }}
-        >
-          <button
-            onClick={() => setMenuAbierto(!menuAbierto)}
-            style={{
-              fontSize: "1rem",
-              padding: "0.5rem 1rem",
-              borderRadius: "6px",
-              border: `1px solid ${linkColor}`,
-              backgroundColor: "#fff",
-              color: linkColor,
-              cursor: "pointer",
-              fontWeight: "600",
-            }}
-          >
-            Menú
-          </button>
+        {!esContacto && (
+          <>
+            {/* Botones sólo desktop */}
+            <div className="botones-desktop" style={estiloBotonesDesktop}>
+              <button
+                onClick={() => setMenuAbierto(!menuAbierto)}
+                style={estiloBoton}
+              >
+                Menú
+              </button>
+              <Link to="/contacto" style={estiloBoton}>
+                Contacto
+              </Link>
+            </div>
 
-          {/* Link Contacto */}
-          <Link
-            to="/contacto"
+            {/* Hamburguesa sólo mobile */}
+            <div
+              className="hamburguesa"
+              onClick={() => setMenuAbierto(!menuAbierto)}
+              style={estiloHamburguesa}
+            >
+              {menuAbierto ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </div>
+          </>
+        )}
+
+        {esContacto && (
+          <button onClick={volver} style={estiloBoton}>
+            Volver
+          </button>
+        )}
+      </nav>
+
+      {/* Menú expandido */}
+      {!esContacto && menuAbierto && (
+        <div className="menu-expandido" style={estiloMenuExpandido}>
+          <div
             style={{
-              fontSize: "1rem",
-              padding: "0.5rem 1rem",
-              borderRadius: "6px",
-              border: `1px solid ${linkColor}`,
-              backgroundColor: "#fff",
-              color: linkColor,
-              cursor: "pointer",
-              textDecoration: "none",
-              fontWeight: "600",
+              width: "100%",
+              height: "1px",
+              backgroundColor: "#ccc",
+              marginBottom: "0.6rem",
             }}
-            onClick={handleClickLink}
-          >
+          />
+          <a href="#sobre-nosotros" style={estiloLinkMenu}>
+            Sobre nosotros
+          </a>
+          <a href="#centros-de-ski" style={estiloLinkMenu}>
+            Centros de ski
+          </a>
+          <a href="#que-ofrecemos" style={estiloLinkMenu}>
+            ¿Qué ofrecemos?
+          </a>
+          <a href="#precios" style={estiloLinkMenu}>
+            Precios y horarios
+          </a>
+          <a href="#niveles" style={estiloLinkMenu}>
+            Niveles
+          </a>
+
+          {/* Contacto sólo en mobile */}
+          <Link to="/contacto" className="link-mobile-contacto" style={estiloLinkMenu}>
             Contacto
           </Link>
-
-          {/* ✅ Botón Volver SOLO en /contacto */}
-          {mostrarBotonVolver && (
-            <button
-              onClick={() => navigate(-1)}
-              style={{
-                fontSize: "1rem",
-                padding: "0.5rem 1rem",
-                borderRadius: "6px",
-                border: `1px solid ${linkColor}`,
-                backgroundColor: "#fff",
-                color: linkColor,
-                cursor: "pointer",
-                fontWeight: "600",
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-              }}
-              aria-label="Volver a la página anterior"
-            >
-              ← Volver
-            </button>
-          )}
         </div>
-      </div>
-
-      {/* Línea separadora */}
-      {menuAbierto && (
-        <div
-          style={{
-            height: "1px",
-            backgroundColor: "#ccc",
-            width: "100vw",
-            marginTop: "0.75rem",
-            position: "relative",
-            left: 0,
-            right: 0,
-            zIndex: 9998,
-          }}
-        />
       )}
-
-      {/* Menú desplegable */}
-      <div
-        style={{
-          display: menuAbierto ? "flex" : "none",
-          flexDirection: "column",
-          backgroundColor: "#f8f9fa",
-          padding: "1rem",
-          boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
-          maxWidth: "1100px",
-          margin: "0 auto",
-          marginTop: "0.5rem",
-          borderRadius: "8px",
-          gap: "1rem",
-          alignItems: "center",
-        }}
-        className="menu-desplegable"
-      >
-        {menuItems.map(({ href, label }) => (
-          <a
-            key={href}
-            href={href}
-            style={{
-              ...baseLinkStyle,
-              fontSize: "1.1rem",
-              padding: "0.5rem 0",
-              width: "100%",
-              maxWidth: "250px",
-              textAlign: "center",
-              borderBottom: "none",
-            }}
-            onClick={handleClickLink}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = linkHoverOpacity)}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
-          >
-            {label}
-          </a>
-        ))}
-      </div>
-
-      <style>
-        {`
-          @media(min-width: 768px) {
-            .menu-desplegable {
-              flex-direction: row !important;
-              justify-content: center !important;
-              gap: 2rem !important;
-              border-bottom: none !important;
-              background-color: transparent !important;
-              box-shadow: none !important;
-              margin-top: 0 !important;
-              padding: 0 !important;
-              max-width: none !important;
-              margin-left: 3rem !important;
-              align-items: center !important;
-            }
-            .menu-desplegable a {
-              border-bottom: none !important;
-              padding: 0 !important;
-              width: auto !important;
-              max-width: none !important;
-              text-align: center !important;
-            }
-          }
-        `}
-      </style>
-    </nav>
+    </>
   );
+};
+
+const estiloBoton = {
+  color: "#000",
+  background: "none",
+  border: "none",
+  padding: "0.5rem 1rem",
+  fontSize: "1rem",
+  textDecoration: "none",
+  cursor: "pointer",
+};
+
+const estiloBotonesDesktop = {
+  display: "flex",
+  gap: "1rem",
+  marginLeft: "auto",
+};
+
+const estiloHamburguesa = {
+  display: "none", // mostrar sólo con CSS en mobile
+  cursor: "pointer",
+  marginLeft: "auto",
+};
+
+const estiloMenuExpandido = {
+  position: "fixed",
+  top: "56px",
+  left: 0,
+  right: 0,
+  backgroundColor: "#fff",
+  padding: "0.5rem 1.2rem",
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  gap: "3rem",
+  zIndex: 9998,
+};
+
+const estiloLinkMenu = {
+  color: "#000",
+  textDecoration: "none",
+  fontSize: "1.1rem",
 };
 
 export default NavBar;

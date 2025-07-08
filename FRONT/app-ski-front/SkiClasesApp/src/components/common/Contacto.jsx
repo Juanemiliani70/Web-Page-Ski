@@ -62,7 +62,7 @@ const Contacto = () => {
           }}
         >
           <a
-            href="https://wa.me/5491198765432"
+            href="https://wa.me/541136842559"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#25D366", textDecoration: "none" }}

@@ -35,26 +35,29 @@ const niveles = [
 
 const NivelesAlumnos = () => {
   return (
+    
     <section
       id="niveles"
       style={{ 
         padding: "4rem 2rem 0.5rem 2rem", 
         backgroundColor: "#000",
+        
       }}
     >
-      <div style={{ marginTop: "50px" }}>
-        <h2
-          style={{
-            textAlign: "center",
-            color: "#fff", // Título blanco
-            fontWeight: "bold",
-            marginBottom: "2rem",
-          }}
-        >
-          Todos los niveles
-        </h2>
-      </div>
+      <div style={{marginTop: "50px"}}>
+      <h2
+        style={{
+          textAlign: "center",
+          color: "#eee",
+          fontWeight: "bold",
+          marginBottom: "2rem",
+          
+        }}
 
+      >
+        Todos los niveles
+      </h2>
+      </div>
       <div
         style={{
           display: "flex",
@@ -91,19 +94,20 @@ const NivelesAlumnos = () => {
                 borderRadius: "70%",
                 objectFit: "cover",
                 marginBottom: "1rem",
-                border: "3px solid #fff", // borde blanco
+                border: "3px solid #888", // borde gris claro neutro
               }}
             />
-            <p style={{ fontStyle: "italic", fontSize: "0.95rem", color: "#fff" }}>
+            <p style={{ fontStyle: "italic", fontSize: "0.95rem", color: "#ccc" }}>
               "{texto}"
             </p>
-            <strong style={{ display: "block", marginTop: "0.8rem", color: "#fff" }}>
+            <strong style={{ display: "block", marginTop: "0.8rem", color: "#eee" }}>
               {nombre}
             </strong>
           </div>
         ))}
       </div>
     </section>
+    
   );
 };
 
