@@ -29,7 +29,7 @@ const Footer = () => {
       >
         <p style={{ margin: 0 }}>Desarrollado por Juan Emiliani</p>
         <a
-          href="https://juanemiliani.vercel.app"
+          href="https://juanemiliani70.github.io/My-Portfolio/"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "#ccc", textDecoration: "none" }}
