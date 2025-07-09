@@ -12,9 +12,9 @@ const Contacto = () => {
     emailjs
       .sendForm(
         "service_8mpmccs",
-        "template_hsuwcs6",  // ← Aquí va tu Template ID real
+        "template_hsuwcs6",  
         form.current,
-        "9VHDCkX0e3iwNer7O"  // ← Tu Public Key
+        "9VHDCkX0e3iwNer7O" 
       )
       .then(
         () => { 
@@ -70,7 +70,7 @@ const Contacto = () => {
             <FaWhatsapp size={32} />
           </a>
           <a
-            href="https://www.instagram.com/santischenone/"
+            href="https://www.instagram.com/deski_clases/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#E1306C", textDecoration: "none" }}
