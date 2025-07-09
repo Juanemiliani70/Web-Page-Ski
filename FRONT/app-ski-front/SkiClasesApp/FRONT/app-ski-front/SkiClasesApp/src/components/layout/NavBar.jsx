@@ -22,7 +22,7 @@ const NavBar = () => {
   const menuItems = [
     { href: "#sobre-nosotros", label: "Sobre Nosotros" },
     { href: "#centros-de-ski", label: "Centros de Ski" },
-    { href: "#precios", label: "Precios y Horarios" },
+    
     { href: "#niveles", label: "Niveles" },
   ];
 

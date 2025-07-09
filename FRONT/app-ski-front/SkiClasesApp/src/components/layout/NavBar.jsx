@@ -119,9 +119,6 @@ const NavBar = () => {
           <a href="#que-ofrecemos" style={estiloLinkMenu}>
             ¿Qué ofrecemos?
           </a>
-          <a href="#precios" style={estiloLinkMenu}>
-            Precios y horarios
-          </a>
           <a href="#niveles" style={estiloLinkMenu}>
             Niveles
           </a>

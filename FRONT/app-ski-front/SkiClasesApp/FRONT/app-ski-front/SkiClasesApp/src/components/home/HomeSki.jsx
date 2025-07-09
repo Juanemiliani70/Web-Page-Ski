@@ -23,9 +23,7 @@ const HomeSki = () => {
         <CentrosDeSki />
       </section>
 
-      <section id="precios">
-        <PreciosHorarios />
-      </section>
+      
 
 
       <section id="niveles">

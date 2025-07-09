@@ -4,7 +4,6 @@ import Parallax from "../common/Parallax";
 import SobreNosotros from "../common/SobreNosotros";
 import NivelesAlumnos from "../common/NivelesAlumnos";
 import CentrosDeSki from "../common/CentrosDeSki"; 
-import PreciosHorarios from "../common/PreciosHorarios";
 import QueOfrecemos from "../common/QueOfrecemos";
 
 
@@ -28,9 +27,7 @@ const HomeSki = () => {
         <QueOfrecemos />
       </section>
 
-      <section id="precios">
-        <PreciosHorarios />
-      </section>
+      
 
 
       <section id="niveles">
