@@ -62,7 +62,7 @@ const Contacto = () => {
           }}
         >
           <a
-            href="https://wa.me/541136842559"
+            href="https://wa.me/541167244753"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#25D366", textDecoration: "none" }}
@@ -70,7 +70,7 @@ const Contacto = () => {
             <FaWhatsapp size={32} />
           </a>
           <a
-            href="https://www.instagram.com/deski_clases/"
+            href="https://www.instagram.com/deski_clases?igsh=OHc4b3VyOGpmNHNu"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#E1306C", textDecoration: "none" }}
