@@ -37,7 +37,7 @@ const NavBar = () => {
           justifyContent: "space-between",
           alignItems: "center",
           position: "fixed",
-          top: 0,
+          top: "30px", // ajustado para quedar debajo del banner
           left: 0,
           right: 0,
           height: "56px",
@@ -59,11 +59,7 @@ const NavBar = () => {
             fontSize: "1.5rem",
           }}
         >
-
-          
-
           S.S
-
         </a>
 
         {!esContacto && (
@@ -157,7 +153,7 @@ const estiloHamburguesa = {
 
 const estiloMenuExpandido = {
   position: "fixed",
-  top: "56px",
+  top: "86px", // 30px banner + 56px navbar
   left: 0,
   right: 0,
   backgroundColor: "#fff",

@@ -70,7 +70,7 @@ const Contacto = () => {
             <FaWhatsapp size={32} />
           </a>
           <a
-            href="https://www.instagram.com/santischenone/"
+            href="https://www.instagram.com/deski_clases/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#E1306C", textDecoration: "none" }}
