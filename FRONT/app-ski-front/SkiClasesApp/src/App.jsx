@@ -8,11 +8,13 @@ import HomeSki from "./components/home/HomeSki";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Contacto from "./components/common/Contacto";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import Banner50Off from "./components/common/Banner50off";
 
 
 function App() {
   return (
     <Router>
+      <Banner50Off />
        <ScrollToTop />
       <NavBar />
       <main style={{ marginTop: "52px" }}> {/* Deja espacio al Navbar fijo */}
