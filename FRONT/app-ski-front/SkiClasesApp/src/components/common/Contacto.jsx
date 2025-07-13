@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp , FaFacebook} from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 const Contacto = () => {
@@ -76,6 +76,14 @@ const Contacto = () => {
             style={{ color: "#E1306C", textDecoration: "none" }}
           >
             <FaInstagram size={32} />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578180517312"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#0000FF", textDecoration: "none" }}
+          >
+            <FaFacebook size={32} />
           </a>
         </div>
 
