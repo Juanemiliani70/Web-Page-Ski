@@ -53,7 +53,7 @@ const Footer = () => {
           <FaLinkedin />
         </a>
         <a
-          href="https://wa.me/541136842559"
+          href="https://wa.me/541122727175"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "#ccc" }}
